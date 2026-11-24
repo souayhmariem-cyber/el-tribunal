@@ -1,0 +1,23 @@
+{
+  "name": "el-tribunal",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Immersive gamified cybersecurity investigations platform",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "engines": {
+    "node": ">=20.19.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -k -n CLIENT,SERVER \"npm run dev --workspace @el-tribunal/client\" \"npm run dev --workspace @el-tribunal/server\"",
+    "build": "npm run build --workspace @el-tribunal/client",
+    "start": "npm run start --workspace @el-tribunal/server",
+    "test": "npm run test --workspace @el-tribunal/server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  }
+}
